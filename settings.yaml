@@ -1,0 +1,15 @@
+# === Load Test Settings ===
+target_tps: 130            # Sustained target TPS
+sla_ms: 60                 # SLA requirement for p98 latency
+test_duration: "10m"       # Duration per test run (steady state)
+warmup_delay_sec: 60       # Wait after deployment before test
+stop_timeout_sec: 30       # Graceful cooldown time for Locust
+
+# === Cluster Capacity ===
+autoscaler_reserve_cpu: 1  # Keep CPU reserved for autoscaling/system
+controller_reserve_cpu: 1  # Reserve CPU for Ray Serve controller
+
+# === Paths ===
+config_file: "configs.json"
+results_dir: "results"
+test_data_file: "test_data.csv"
